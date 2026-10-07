@@ -1,0 +1,197 @@
+:root {
+  --accent: #34d399;
+  --on-accent: #06281c;
+  --text: #ffffff;
+  --muted: rgba(255, 255, 255, 0.66);
+  --glass: rgba(16, 18, 28, 0.42);
+  --border: rgba(255, 255, 255, 0.2);
+}
+* {
+  box-sizing: border-box;
+}
+html,
+body {
+  margin: 0;
+  min-height: 100%;
+}
+body {
+  font-family: 'Segoe UI Variable Text', 'Segoe UI', system-ui, sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(60vw 60vw at 15% 10%, #3b82f6aa, transparent 60%),
+    radial-gradient(50vw 50vw at 90% 20%, #f472b6aa, transparent 60%),
+    radial-gradient(60vw 60vw at 60% 100%, #34d39999, transparent 60%),
+    #0d0f17;
+  background-attachment: fixed;
+  -webkit-font-smoothing: antialiased;
+}
+a {
+  color: inherit;
+}
+.wrap {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 28px 16px 60px;
+}
+.glass {
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.14), rgba(255, 255, 255, 0.02)), var(--glass);
+  backdrop-filter: blur(28px) saturate(1.4);
+  -webkit-backdrop-filter: blur(28px) saturate(1.4);
+  border: 1px solid var(--border);
+  border-radius: 22px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+header.top {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 14px;
+}
+header.top img {
+  width: 34px;
+  height: 34px;
+  border-radius: 9px;
+}
+header.top b {
+  font-size: 18px;
+}
+header.top .spacer {
+  flex: 1;
+}
+.hero {
+  margin-top: 22px;
+  padding: 44px 32px;
+  text-align: center;
+}
+.hero h1 {
+  margin: 0 0 12px;
+  font-size: clamp(30px, 6vw, 52px);
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+}
+.hero p {
+  margin: 0 auto 26px;
+  max-width: 600px;
+  font-size: 18px;
+  line-height: 1.5;
+  color: var(--muted);
+}
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  height: 48px;
+  padding: 0 26px;
+  border-radius: 14px;
+  border: 0;
+  background: var(--accent);
+  color: var(--on-accent);
+  font: 700 16px inherit;
+  font-family: inherit;
+  text-decoration: none;
+  cursor: pointer;
+}
+.btn:hover {
+  filter: brightness(1.08);
+}
+.btn.ghost {
+  background: rgba(255, 255, 255, 0.12);
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+.small {
+  font-size: 13px;
+  color: var(--muted);
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+.card {
+  padding: 22px;
+}
+.card h3 {
+  margin: 8px 0 6px;
+  font-size: 17px;
+}
+.card p {
+  margin: 0;
+  color: var(--muted);
+  line-height: 1.5;
+  font-size: 14.5px;
+}
+.card .emoji {
+  font-size: 26px;
+}
+.steps {
+  margin-top: 16px;
+  padding: 26px 28px;
+}
+.steps h2 {
+  margin: 0 0 12px;
+}
+.steps ol {
+  margin: 0;
+  padding-left: 22px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.steps b {
+  color: var(--text);
+}
+footer {
+  margin-top: 26px;
+  text-align: center;
+}
+.invite {
+  max-width: 460px;
+  margin: 8vh auto 0;
+  padding: 34px 30px 26px;
+  text-align: center;
+}
+.invite .icon {
+  display: grid;
+  place-items: center;
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 12px;
+  border-radius: 50%;
+  background: rgba(52, 211, 153, 0.2);
+  font-size: 30px;
+}
+.invite h1 {
+  margin: 0 0 10px;
+  font-size: 26px;
+}
+.invite p {
+  color: var(--muted);
+  line-height: 1.55;
+}
+.invite p b {
+  color: var(--text);
+}
+.code {
+  display: inline-block;
+  margin: 6px 0 2px;
+  padding: 6px 16px;
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.08);
+  font: 700 26px 'Cascadia Mono', Consolas, monospace;
+  letter-spacing: 0.14em;
+  color: var(--accent);
+  user-select: all;
+}
+.actions {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin: 20px 0 10px;
+}
+hr {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
+  margin: 18px 0;
+}

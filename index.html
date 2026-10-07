@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Pizarra</title>
+    <meta name="description" content="Tu pizarrón de cristal en el escritorio de Windows: tareas, calendarios y notas que compartes con tu familia." />
+    <link rel="icon" href="icon.png" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="top glass">
+        <img src="icon.png" alt="" />
+        <b>Pizarra</b>
+        <div class="spacer"></div>
+        <a class="btn ghost" style="height: 38px; padding: 0 16px; font-size: 14px" data-download href="#">Descargar</a>
+      </header>
+
+      <section class="hero glass">
+        <h1>Tu pizarrón de cristal,<br />siempre en el escritorio</h1>
+        <p>
+          Tareas, semana, mes, notas adhesivas y tablero Kanban sobre tu fondo de pantalla. Comparte un espacio con tu familia y vean los
+          cambios al instante, sin cuentas ni servidores.
+        </p>
+        <a class="btn" data-download href="#">⬇&nbsp; Descargar para Windows</a>
+        <p class="small" data-version style="margin: 12px 0 0">Windows 10 y 11 · gratis</p>
+      </section>
+
+      <div class="grid">
+        <div class="card glass">
+          <div class="emoji">🪟</div>
+          <h3>En tu escritorio</h3>
+          <p>Vive detrás de tus ventanas, con efecto cristal sobre tu fondo (también Wallpaper Engine). Win+D y ahí está.</p>
+        </div>
+        <div class="card glass">
+          <div class="emoji">👨‍👩‍👧</div>
+          <h3>Espacios compartidos</h3>
+          <p>Crea "Familia" o "Trabajo" e invita con un enlace. Cada espacio tiene sus pestañas y notas fijadas; lo Personal es solo tuyo.</p>
+        </div>
+        <div class="card glass">
+          <div class="emoji">🔒</div>
+          <h3>Privado de verdad</h3>
+          <p>Las PCs se hablan directamente y cifrado. No hay servidor guardando tus cosas.</p>
+        </div>
+        <div class="card glass">
+          <div class="emoji">✨</div>
+          <h3>Se actualiza sola</h3>
+          <p>Las versiones nuevas llegan en segundo plano y se aplican cuando no estás usando la PC.</p>
+        </div>
+      </div>
+
+      <section class="steps glass">
+        <h2>Cómo instalarla</h2>
+        <ol>
+          <li><b>Descarga</b> el archivo .zip y ábrelo.</li>
+          <li><b>Extrae</b> la carpeta (clic derecho → Extraer todo).</li>
+          <li>Abre <b>Pizarra.exe</b>: se instala sola, crea su acceso en el escritorio y arranca con Windows.</li>
+          <li>Si Windows pregunta por <b>permitir conexiones</b>, acepta: así puedes compartir con tu familia.</li>
+        </ol>
+        <p class="small" style="margin-top: 14px">Ya puedes borrar la carpeta descargada. Se desinstala desde Configuración → Aplicaciones.</p>
+      </section>
+
+      <footer class="small">Pizarra · hecha con cariño en casa</footer>
+    </div>
+    <script src="config.js"></script>
+    <script>
+      pizarraDownload();
+    </script>
+  </body>
+</html>

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Invitación a Pizarra</title>
+    <meta name="description" content="Te invitaron a un espacio compartido de Pizarra." />
+    <link rel="icon" href="../icon.png" />
+    <link rel="stylesheet" href="../styles.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <section class="invite glass">
+        <div class="icon">👋</div>
+        <h1 id="title">Te invitaron a Pizarra</h1>
+        <p id="text">Alguien te invitó a su espacio compartido.</p>
+        <div class="code" id="code">—</div>
+        <div class="actions">
+          <a class="btn" id="open" href="#">Abrir en Pizarra</a>
+        </div>
+        <p class="small">Pizarra te preguntará si aceptas o rechazas la invitación.</p>
+        <hr />
+        <p class="small">
+          ¿Aún no tienes Pizarra? <a data-download href="#">Descárgala aquí</a>, instálala y vuelve a abrir este enlace. Si el botón no
+          funciona, en Pizarra ve a <b>Ajustes → Compartir → Tengo un código</b> y escribe el código de arriba.
+        </p>
+      </section>
+    </div>
+    <script src="../config.js"></script>
+    <script>
+      // El enlace trae la invitación después del "#": nunca llega a ningún servidor.
+      const q = new URLSearchParams(location.hash.slice(1));
+      const raw = (q.get('c') || '').toUpperCase().replace(/[^A-Z0-9]/g, '');
+      const from = (q.get('de') || '').slice(0, 40);
+      const space = (q.get('e') || '').slice(0, 40);
+      const el = (id) => document.getElementById(id);
+      if (raw.length === 6) {
+        el('code').textContent = `${raw.slice(0, 3)}-${raw.slice(3)}`;
+        const t = from ? `${from} te invitó a Pizarra` : 'Te invitaron a Pizarra';
+        el('title').textContent = t;
+        document.title = t;
+        el('text').innerHTML = '';
+        el('text').append(
+          from || 'Alguien',
+          ' te invitó a su espacio ',
+          Object.assign(document.createElement('b'), { textContent: `"${space || 'compartido'}"` }),
+          '. Ahí verán juntos las mismas pestañas y notas fijadas.',
+        );
+        const link = `pizarra://unirse?${new URLSearchParams({ c: raw, de: from, e: space })}`;
+        el('open').href = link;
+        // Intentar abrir la app directamente.
+        setTimeout(() => (location.href = link), 400);
+      } else {
+        el('text').textContent = 'Este enlace de invitación está incompleto. Pide a quien te invitó que te lo mande de nuevo.';
+        el('open').style.display = 'none';
+      }
+      pizarraDownload();
+    </script>
+  </body>
+</html>
